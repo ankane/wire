@@ -4,8 +4,11 @@ module Wire
 
     class_methods do
       def publish(*args)
-        include Wire::PublisherMethods
-        self.publish_attributes = args.map(&:to_s)
+        unless respond_to?(:publish_attributes)
+          include Wire::PublisherMethods
+          self.publish_attributes = []
+        end
+        self.publish_attributes.concat(args.map(&:to_s))
       end
     end
   end
