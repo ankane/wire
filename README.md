@@ -32,7 +32,7 @@ Create a new consumer with:
 rails generate wire:consumer Welcome
 ```
 
-and
+It’ll be placed in `app/consumers`. Update it to:
 
 ```ruby
 class WelcomeConsumer < Wire::Consumer
