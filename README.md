@@ -38,8 +38,8 @@ and
 class WelcomeConsumer < Wire::Consumer
   topic :visit
 
-  def perform(payload)
-    puts "Hi #{payload["name"]}"
+  def perform(message)
+    puts "Hi #{message["name"]}"
   end
 end
 ```
@@ -79,7 +79,7 @@ User.find_each { |user| user.sync }
 To make development easier, you can run consumers immediately with:
 
 ```ruby
-WelcomeConsumer.perform_now(payload)
+WelcomeConsumer.perform_now(message)
 ```
 
 To consume a single message, use:
@@ -94,7 +94,7 @@ Use the `metadata` method to access info like partition, offset, key, and raw va
 
 ```ruby
 class WelcomeConsumer < Wire::Consumer
-  def perform(payload)
+  def perform(message)
     metadata[:partition]
     metadata[:offset]
     metadata[:key]
@@ -138,7 +138,7 @@ Wire.register_serializer(:custom, CustomSerializer, default: true)
 You can also specify a serializer when publishing
 
 ```ruby
-Wire.publish(topic, payload, serializer: :msgpack)
+Wire.publish(topic, message, serializer: :msgpack)
 ```
 
 Or consuming
