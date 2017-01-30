@@ -141,7 +141,7 @@ You can also specify a serializer when publishing
 Wire.publish(topic, payload, serializer: :msgpack)
 ```
 
-And for a consumer
+Or consuming
 
 ```ruby
 class MessageConsumer < Wire::Consumer
