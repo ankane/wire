@@ -23,7 +23,7 @@ class WireTest < Minitest::Test
     User.delete_all
     Person.delete_all
 
-    User.create!(name: "Kona", joined_at: Time.now)
+    User.create!(name: "McNulty", joined_at: Time.now)
     assert !Person.exists?
     Person.wire_consumer.consume_once
     assert_equal 1, Person.count
@@ -45,15 +45,15 @@ class WireTest < Minitest::Test
     User.delete_all
     Person.delete_all
 
-    User.create!(name: "Kona")
+    User.create!(name: "McNulty")
     Person.wire_consumer.consume_once
 
-    Person.first.update(name: "Ginger")
-    assert_equal "Ginger", Person.first.name
+    Person.first.update(name: "Stringer")
+    assert_equal "Stringer", Person.first.name
 
     User.find_each(&:sync)
     Person.wire_consumer.consume_once
-    assert_equal "Kona", Person.first.name
+    assert_equal "McNulty", Person.first.name
   end
 
   # TODO better version

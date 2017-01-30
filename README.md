@@ -23,7 +23,7 @@ gem "wire", github: "ankane/wire"
 Publish a message with:
 
 ```ruby
-Wire.publish(:visit, {name: "Kona"})
+Wire.publish(:visit, {name: "McNulty"})
 ```
 
 Create a new consumer with:
