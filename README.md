@@ -113,13 +113,11 @@ To disable serialization, use:
 Wire.default_serializer = :noop
 ```
 
-For MessagePack, use:
+For MessagePack, add [msgpack](https://github.com/msgpack/msgpack-ruby) to your Gemfile, and use:
 
 ```ruby
 Wire.default_serializer = :msgpack
 ```
-
-**Note:** Be sure to add [msgpack](https://github.com/msgpack/msgpack-ruby) to your Gemfile.
 
 Or create a custom serializer
 
@@ -143,7 +141,7 @@ You can also specify a serializer when publishing
 Wire.publish(topic, payload, serializer: :msgpack)
 ```
 
-Or for a specific consumer
+And for a consumer
 
 ```ruby
 class MessageConsumer < Wire::Consumer
