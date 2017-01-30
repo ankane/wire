@@ -113,7 +113,7 @@ To disable serialization, use:
 Wire.default_serializer = :noop
 ```
 
-For MessagePack, add [msgpack](https://github.com/msgpack/msgpack-ruby) to your Gemfile, and use:
+For MessagePack, add [msgpack](https://github.com/msgpack/msgpack-ruby) to your Gemfile and use:
 
 ```ruby
 Wire.default_serializer = :msgpack
@@ -161,16 +161,3 @@ end
 ## Credits
 
 Thanks to [Promiscuous](https://github.com/promiscuous-io/promiscuous) for designing a great interface for model updates.
-
-## History
-
-View the [changelog](https://github.com/ankane/wire/blob/master/CHANGELOG.md)
-
-## Contributing
-
-Everyone is encouraged to help improve this project. Here are a few ways you can help:
-
-- [Report bugs](https://github.com/ankane/wire/issues)
-- Fix bugs and [submit pull requests](https://github.com/ankane/wire/pulls)
-- Write, clarify, or fix documentation
-- Suggest or add new features
