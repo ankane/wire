@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require File.expand_path("config/environment.rb")
+
+server = Wire::ConsumerGroup.new
+trap("SIGINT") { server.stop }
+server.run

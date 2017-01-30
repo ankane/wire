@@ -1,0 +1,9 @@
+<% module_namespacing do -%>
+class <%= class_name %>Consumer < Wire::Consumer
+  topic <%= class_name.underscore.to_sym.inspect %>
+
+  def perform(payload)
+    # Do something
+  end
+end
+<% end -%>
