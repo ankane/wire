@@ -90,7 +90,7 @@ WelcomeConsumer.consume_once
 
 ## Metadata
 
-Use the `metadata` method to access message metadata like partition, offset, key, and raw value.
+Use the `metadata` method to access info like partition, offset, key, and raw value.
 
 ```ruby
 class WelcomeConsumer < Wire::Consumer
