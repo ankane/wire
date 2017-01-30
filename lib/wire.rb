@@ -41,8 +41,8 @@ module Wire
   def self.publish(topic, payload, partition: nil, partition_key: nil, key: nil, serializer: nil)
     client.deliver_message(find_serializer(serializer).serialize(payload), {
       topic: topic.to_s,
-      partition: partition,
-      partition_key: partition_key,
+      partition: partition ? partition.to_i : partition,
+      partition_key: partition_key ? partition_key.to_s : partition_key,
       key: key ? key.to_s : key
     })
     # TODO option to use async producer
