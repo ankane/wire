@@ -74,7 +74,7 @@ To sync all records, use:
 User.find_each { |user| user.sync }
 ```
 
-## Methods
+## More Features
 
 To make development easier, you can run consumers immediately with:
 
@@ -105,7 +105,7 @@ end
 
 ## Serialization
 
-By default, JSON is used for serialization.
+By default, Wire uses JSON for serialization.
 
 To disable serialization, use:
 
